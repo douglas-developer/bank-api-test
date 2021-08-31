@@ -153,6 +153,42 @@
 				"description": "Bloquear uma conta"
 			},
 			"response": []
+		},
+		{
+			"name": "TRANSAÇÕES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/accounts/:idConta/transactions?startFrom=2021-06-31:08:00&endAt=2021-07-31:19:00",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"accounts",
+						":idConta",
+						"transactions"
+					],
+					"query": [
+						{
+							"key": "startFrom",
+							"value": "2021-06-31:08:00"
+						},
+						{
+							"key": "endAt",
+							"value": "2021-07-31:19:00"
+						}
+					],
+					"variable": [
+						{
+							"key": "idConta",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
