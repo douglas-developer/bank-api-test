@@ -1,0 +1,7 @@
+module.exports = {
+    'ACCOUNT_NOT_FOUND': 1,
+    'CPF_IS_INVALID': 2,
+    'ACCOUNT_TYPE_ALREADY_EXISTS': 3,
+    'INSUFFICIENT_FUNDS': 4,
+    'ACCOUNT_BLOCKED': 5
+};

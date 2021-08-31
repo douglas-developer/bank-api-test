@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "0d75b8d4-7f38-4f8d-bef2-f5487a1aa757",
+		"name": "BANK_TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CRIAR_CONTA_E_CLIENTE",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tipoConta\" : 1,\n\t\"cpf\": 68557680082,\n\t\"nome\": \"Fulano de Tal\",\n\t\"dataNascimento\": \"09/03/1997\"\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/clients/account",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"clients",
+						"account"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEPOSITAR",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"valor\": 20.50\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/accounts/:idConta/deposit",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"accounts",
+						":idConta",
+						"deposit"
+					],
+					"variable": [
+						{
+							"key": "idConta",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SALDO_CONTA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/accounts/2/balance",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"accounts",
+						"2",
+						"balance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SACAR",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"valor\": 20\n}"
+				},
+				"url": {
+					"raw": "localhost:3000/accounts/1/withdraw",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"accounts",
+						"1",
+						"withdraw"
+					]
+				},
+				"description": "Realizar saque em uma conta"
+			},
+			"response": []
+		},
+		{
+			"name": "BLOQUEAR_CONTA",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:3000/accounts/:idConta/block",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"accounts",
+						":idConta",
+						"block"
+					],
+					"variable": [
+						{
+							"key": "idConta",
+							"value": ""
+						}
+					]
+				},
+				"description": "Bloquear uma conta"
+			},
+			"response": []
+		}
+	]
+}
