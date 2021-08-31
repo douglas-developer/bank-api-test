@@ -13,7 +13,6 @@ class AccountsService extends BaseService {
         let account = await AccountModel.findOne({ idConta });
         if (!account) throw ({ message: "ACCOUNT_NOT_FOUND", status: 404 });
         if (!account.flagAtivo) throw ({ message: "ACCOUNT_BLOCKED" });
-        console.log(account.saldo, valor);
         await TransactionModel.create({ Id: idConta, valor, dataTransacao: Date.now(), idConta: account.idConta });
         account.saldo = Number((account.saldo).toFixed(2)) + Number((valor).toFixed(2));
         await account.save();
